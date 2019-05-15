@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="TESTE_APP.TESTE::CV_Item" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="HOURLY" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_Item"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="TESTE_APP.TESTE::PurchaseOrder.Item">
+    <resourceUri>TESTE_APP.TESTE::PurchaseOrder.Item</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="TESTE_APP.TESTE::PurchaseOrder.Item">
+  <attributes>
+    <attribute id="PRODUCT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product ID"/>
+      <keyMapping columnObjectName="PurchaseOrder.Item" columnName="PRODUCT"/>
+    </attribute>
+    <attribute id="NOTEID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Notes"/>
+      <keyMapping columnObjectName="PurchaseOrder.Item" columnName="NOTEID"/>
+    </attribute>
+    <attribute id="CURRENCY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Currency"/>
+      <keyMapping columnObjectName="PurchaseOrder.Item" columnName="CURRENCY"/>
+    </attribute>
+    <attribute id="QUANTITYUNIT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quantity Unit"/>
+      <keyMapping columnObjectName="PurchaseOrder.Item" columnName="QUANTITYUNIT"/>
+    </attribute>
+    <attribute id="DELIVERYDATE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery Date"/>
+      <keyMapping columnObjectName="PurchaseOrder.Item" columnName="DELIVERYDATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="POHeader_PURCHASEORDERID" order="1" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="POHeader_PURCHASEORDERID"/>
+      <measureMapping columnObjectName="PurchaseOrder.Item" columnName="POHeader.PURCHASEORDERID"/>
+    </measure>
+    <measure id="GROSSAMOUNT" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Gross Amount"/>
+      <measureMapping columnObjectName="PurchaseOrder.Item" columnName="GROSSAMOUNT"/>
+    </measure>
+    <measure id="NETAMOUNT" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Net Amount"/>
+      <measureMapping columnObjectName="PurchaseOrder.Item" columnName="NETAMOUNT"/>
+    </measure>
+    <measure id="TAXAMOUNT" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Tax Amount"/>
+      <measureMapping columnObjectName="PurchaseOrder.Item" columnName="TAXAMOUNT"/>
+    </measure>
+    <measure id="QUANTITY" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Quantity"/>
+      <measureMapping columnObjectName="PurchaseOrder.Item" columnName="QUANTITY"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
