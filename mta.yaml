@@ -1,3 +1,16 @@
 ID: TESTE_APP
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: TESTE
+   type: hdb
+   path: TESTE
+   requires:
+    - name: hdi_TESTE
+
+resources:
+ - name: hdi_TESTE
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
